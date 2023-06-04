@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 
-import HomePage from "./(routes)/homepage/page";
+import LandingPage from "./(routes)/landingpage/page";
 
 export default function Page() {
   return (
     <Fragment>
-      <HomePage />
+      <LandingPage />
     </Fragment>
   );
 }

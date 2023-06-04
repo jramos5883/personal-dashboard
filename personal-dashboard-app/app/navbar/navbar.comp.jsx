@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <div className="flex navbar-container bg-blue-300 h-24 justify-between items-center text-center">
       <h1 className="text-3xl px-4">Dashboard Navbar</h1>
@@ -9,6 +9,4 @@ const Navbar = () => {
       </Link>
     </div>
   );
-};
-
-export default Navbar;
+}
