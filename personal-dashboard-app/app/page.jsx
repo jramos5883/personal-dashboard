@@ -1,12 +1,10 @@
 import { Fragment } from "react";
 
-import Navbar from "./(components)/navbar/navbar.comp";
-import HomePage from "./(components)/homepage/homepage.comp";
+import HomePage from "./(routes)/homepage/page";
 
 export default function Page() {
   return (
     <Fragment>
-      <Navbar />
       <HomePage />
     </Fragment>
   );
