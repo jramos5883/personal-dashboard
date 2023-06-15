@@ -14,8 +14,8 @@ export function SignInButton() {
 
   if (status === "authenticated") {
     return (
-      <>
-        <Link href={"/dashbaord"}>
+      <div className="flex flex-row">
+        <Link className="px-4" href={`/dashbaord`}>
           <Image
             src={session.user?.image ?? "/mememan.webp"}
             width={50}
@@ -24,13 +24,21 @@ export function SignInButton() {
           />
         </Link>
         <SignOutButton />
-      </>
+      </div>
     );
   }
 
-  return <button onClick={() => signIn()}>Sign in</button>;
+  return (
+    <button className="px-4" onClick={() => signIn()}>
+      Sign in
+    </button>
+  );
 }
 
 export function SignOutButton() {
-  return <button onClick={() => signOut()}>Sign out</button>;
+  return (
+    <button className="px-4" onClick={() => signOut()}>
+      Sign out
+    </button>
+  );
 }
