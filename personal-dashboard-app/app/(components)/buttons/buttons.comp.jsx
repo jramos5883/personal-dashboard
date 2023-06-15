@@ -9,13 +9,17 @@ export function SignInButton() {
   console.log(session, status);
 
   if (status === "loading") {
-    return <>...</>;
+    return (
+      <div>
+        <p className="px-4">...</p>
+      </div>
+    );
   }
 
   if (status === "authenticated") {
     return (
       <div className="flex flex-row">
-        <Link className="px-4" href={`/dashbaord`}>
+        <Link className="px-4" href={"/dashboard"}>
           <Image
             src={session.user?.image ?? "/mememan.webp"}
             width={50}

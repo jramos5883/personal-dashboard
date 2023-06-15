@@ -7,14 +7,12 @@ import { redirect } from "next/navigation";
 // directs to a users dashboard after logging in.
 
 export default async function Page() {
-  // const session = await getServerSession();
-  // if (session) {
-  //   redirect("/dashbaord/");
-  // }
-
-  return (
-    <>
-      <LandingPage />
-    </>
-  );
+  const session = await getServerSession();
+  if (!session) {
+    return (
+      <>
+        <LandingPage />
+      </>
+    );
+  }
 }
