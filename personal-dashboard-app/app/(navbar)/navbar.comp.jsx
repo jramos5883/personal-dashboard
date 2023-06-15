@@ -1,3 +1,7 @@
+import {
+  SignInButton,
+  SignOutButton,
+} from "../(components)/buttons/buttons.comp";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -6,9 +10,7 @@ export default function Navbar() {
       <Link className="text-3xl px-4" href="/">
         Dashboard Navbar
       </Link>
-      <Link className="px-4" href="/auth">
-        Log In / Sign Up
-      </Link>
+      <SignInButton />
     </div>
   );
 }
