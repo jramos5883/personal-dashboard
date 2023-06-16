@@ -19,7 +19,7 @@ export function SignInButton() {
   if (status === "authenticated") {
     return (
       <div className="flex flex-row">
-        <Link className="px-4" href={"/dashboard"}>
+        <Link className="px-4" href={`/dashboard/${session.user?.id}`}>
           <Image
             src={session.user?.image ?? "/mememan.webp"}
             width={50}

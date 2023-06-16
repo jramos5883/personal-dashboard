@@ -17,12 +17,23 @@ export const authOptions = {
     }),
     // Wanted to add facebook login, but need a privacy policy URL
     // and a deletion policy URL, I'll add FB log in later
-    
+
     // FacebookProvider({
     //   clientId: process.env.FACEBOOK_ID,
     //   clientSecret: process.env.FACEBOOK_SECRET,
     // }),
   ],
+  callbacks: {
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        session.user.id = token.sub;
+      }
+      return session;
+    },
+  },
+  session: {
+    strategy: "jwt",
+  },
 };
 
 const handler = NextAuth(authOptions);
