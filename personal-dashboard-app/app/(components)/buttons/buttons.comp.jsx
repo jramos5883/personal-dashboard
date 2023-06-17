@@ -1,8 +1,8 @@
 "use client";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter, redirect } from "next/navigation";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,5 +49,16 @@ export function SignInButton() {
 }
 
 export function SignOutButton() {
-  return <button onClick={() => signOut()}>Sign out</button>;
+  const router = useRouter();
+
+  const handleSignOut = async () => {
+    await signOut({ callbackUrl: "/" }); // You may need to provide the callbackUrl to where you want to redirect after signOut
+    router.replace("/dashboard"); // Use replace to ensure the new page replaces the current page in the history stack
+  };
+
+  return (
+    <button className="px-4" onClick={handleSignOut}>
+      Sign out
+    </button>
+  );
 }
