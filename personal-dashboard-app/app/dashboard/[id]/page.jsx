@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   if (status === "authenticated")
     return (
-      <h1 className="text-3xl text-center py-4">
+      <h1 className="text-5xl text-center py-4">
         Welcome to your dashboard, {session?.user?.name}!
       </h1>
     );
