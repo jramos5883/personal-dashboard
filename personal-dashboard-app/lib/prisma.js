@@ -8,3 +8,5 @@ async function Users() {
 }
 
 Users();
+
+// Need to figure out how to utilize prisma and start passing info to and from db
