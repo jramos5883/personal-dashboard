@@ -1,5 +1,7 @@
 "use client";
 
+import GoogleCalendarApi from "../(dash.comp)/dc.googleCalApi/dc.googleCalApi.comp";
+
 import { useSession } from "next-auth/react";
 
 export default function Dashboard() {
@@ -11,8 +13,11 @@ export default function Dashboard() {
 
   if (status === "authenticated")
     return (
-      <h1 className="text-5xl text-center py-4">
-        Welcome to your dashboard, {session?.user?.name}!
-      </h1>
+      <div className="container justify-center items-center">
+        <h1 className="text-5xl text-center py-4">
+          Welcome to your dashboard, {session?.user?.name}!
+          <GoogleCalendarApi />
+        </h1>
+      </div>
     );
 }
